@@ -1,0 +1,57 @@
+<div style="text-align: center;">
+  <h1>Register</h1>
+
+</div>
+
+
+
+<br><br>
+
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col">
+    <form (ngSubmit) ="!registerForm.invalid && onSubmit()"  #registerForm="ngForm" >
+
+      <div>
+        <label for="firstname">First Name</label>
+        <input name="firstname" type="text" [(ngModel)] = "firstname"
+        class="form-control" id="firstname" placeholder="First Name" required>
+      </div>
+      <br>
+      <div>
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" class="form-control" id="lastname"  [(ngModel)] = "lastname" placeholder="Last Name" required>
+      </div>
+      <br>
+      <div>
+        <label for="email">Email address</label>
+        <input type="email" name="email" class="form-control" id="email"  [(ngModel)] = "email" placeholder="name@example.com" required>
+      </div>
+      <br>
+      <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" id="username"  [(ngModel)] = "userName" placeholder="Username" required>
+      </div>
+      <br>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" id="password"  [(ngModel)] = "password" placeholder="Password" required>
+      </div>
+      <br><br>
+      <button class="btn btn-light" type="Submit">Sign Up</button>
+    </form>
+
+
+
+  </div>
+  <div class="col-lg-3"></div>
+</div>
+
+
+
+
+<br><br>
+<div class="alert alert-success" role="alert" *ngIf = "register">
+  Registration Succesful click  to go to login page
+</div>
+

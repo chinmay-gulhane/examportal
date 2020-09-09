@@ -1,0 +1,53 @@
+<div class="container">
+
+            <table class="table table-bordered table-striped">
+
+                <thead class="thead-dark">
+                <th>No</th>
+                <th>Question</th>
+                <th>Option1</th>
+                <th>Option2</th>
+                <th>Option3</th>
+                <th>Option4</th>
+                <th>Answer</th>
+
+                </thead>
+
+                <tbody>
+                <tr *ngFor="let detail of questions; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{detail.questionName}}</td>
+                    <td>
+                        <input type="radio" name="answer" id="">
+                        {{detail.option1}}
+                    </td>
+                    <td>
+                        <input type="radio" name="answer" id="">
+                        {{detail.option2}}
+                    </td>
+                    <td>
+                        <input type="radio" name="answer" id="">
+                        {{detail.option3}}
+                    </td>
+                    <td>
+                        <input type="radio" name="answer" id="">
+                        {{detail.option4}}
+                    </td>
+                    <td>
+                        <select>
+                          <option>Select Answer</option>
+                          <option>a</option>
+                          <option>b</option>
+                          <option>c</option>
+                          <option>d</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <button class="btn btn-primary">Submit Test</button>
+
+
+

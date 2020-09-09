@@ -1,0 +1,31 @@
+<h1>Exam List</h1>
+<br>
+<div>
+    <table class="table table-bordered table-striped ">
+
+        <thead class="thead-dark">
+            <th>Sno</th>
+            <th>Exam Name</th>
+            <th>Exam Description</th>
+            <th>View Questions</th>
+            <th>Add Questions</th>
+        </thead>
+
+
+         <tbody>
+        <tr *ngFor="let detail of exam ; let i = index">
+            <!-- <td>{{detail.id}}</td> -->
+            <td>{{i+1}}</td>
+            <td>{{detail.examName}}</td>
+            <td>{{detail.examDescription}}</td>
+            <td><Button (click) = "fetchExam(detail.id)" class="btn btn-success">Questions</Button></td>
+            <td><Button (click) = "addQuestions(detail.id , detail.examName)" class="btn btn-info">Add</Button></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<hr>
+<button (click) = "createNewExam()" class="btn btn-primary">Create New Exam</button>
+
+

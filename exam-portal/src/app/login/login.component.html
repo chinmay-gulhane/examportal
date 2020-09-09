@@ -1,0 +1,45 @@
+<br>
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col" style="background-color: #e9ecef;">
+            <h1>Login</h1>
+            <br>
+            <form>
+                <div>
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="username" class="form-control" id="username" [(ngModel)]="username"
+                                placeholder="Username" required>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div class="row">
+                    <div class="col-lg-1">
+                        <i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                        <input type="password" name="password" class="form-control" id="password"
+                            [(ngModel)]="password1" placeholder="Password" required>
+                    </div>
+                </div>
+                </div>
+                <br>
+                <button (click)=handleLogin() class="btn btn-primary">Login</button>
+            </form>
+            <br>
+            <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>

@@ -1,0 +1,36 @@
+
+
+<div class="container">
+    <table class="table table-bordered">
+
+        <thead class="thead-dark">
+        <th>No</th>
+        <th>Question</th>
+        <th>Option1</th>
+        <th>Option2</th>
+        <th>Option3</th>
+        <th>Option4</th>
+        <th>Answer</th>
+        </thead>
+    
+        <tr *ngFor="let detail of questions; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{detail.questionName}}</td>
+            <td>
+                {{detail.option1}}
+            </td>
+            <td>
+                {{detail.option2}}
+            </td>
+            <td>
+                {{detail.option3}}
+            </td>
+            <td>
+                {{detail.option4}}
+            </td>
+            <td>
+                {{detail.answer}}
+            </td>
+        </tr>
+    </table>
+</div>

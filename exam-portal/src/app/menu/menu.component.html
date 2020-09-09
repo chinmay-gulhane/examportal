@@ -1,0 +1,20 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a class="navbar-brand">Exam System</a></div>
+
+        <ul class="navbar-nav">
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="welcome/chinmay" class="nav-link">Home </a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="students" class="nav-link">All Students </a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="exams" class="nav-link">Exams </a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isStudentLoggedIn()" routerLink="student" class="nav-link">Home</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isStudentLoggedIn()" routerLink="studentexamlist" class="nav-link">Exams</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn() && !hardcodedAuthenticationService.isStudentLoggedIn()"  routerLink="login" class="nav-link">Login </a></li>
+            <li><a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn() && !hardcodedAuthenticationService.isStudentLoggedIn()" routerLink="register" class="nav-link">Register </a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn() || hardcodedAuthenticationService.isStudentLoggedIn() " routerLink="logout" class="nav-link">Logout </a></li>
+        </ul>
+
+    </nav>
+</header>
+<br>

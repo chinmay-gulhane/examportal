@@ -1,0 +1,26 @@
+<h1>Students</h1>
+<br>
+<div>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <th>id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>View Details</th>
+    
+        </thead>
+        
+        <tr *ngFor="let detail of student; let i=index">
+            <td style="display:none;">{{detail.id}}</td>
+            <td>{{i+1}}</td>
+            <td>{{detail.firstName}}</td>
+            <td>{{detail.lastName}}</td>
+            <td>{{detail.email}}</td>
+            <td><Button (click) = "fetchStudent(detail.id)"  class="btn btn-success">Details</Button></td>
+        </tr>
+    </table>
+
+
+    
+</div>

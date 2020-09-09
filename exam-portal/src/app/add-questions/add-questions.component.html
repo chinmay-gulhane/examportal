@@ -1,0 +1,120 @@
+<h3>Exam Name: {{examName}}</h3>
+<br>
+<br>
+
+
+<table class="table table-bordered">
+
+    <thead class="thead-dark">
+        <th>No</th>
+        <th>Question Name</th>
+        <th>Option 1</th>
+        <th>Option 2</th>
+        <th>Option 3</th>
+        <th>Option 4</th>
+        <th>Answer</th>
+    </thead>
+
+    <tr *ngFor="let question of questions; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{question.questionName}}</td>
+        <td>{{question.option1}}</td>
+        <td>{{question.option2}}</td>
+        <td>{{question.option3}}</td>
+        <td>{{question.option4}}</td>
+        <td>{{question.answer}}</td>
+    </tr>
+
+</table>
+
+
+<br>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Add Question
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Question</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <tr>
+                    <div class="row">
+                        <div class="col"><label for="">Question Name</label></div>
+                        <div class="col"> <input name="questionname" type="text" [(ngModel)]="questionName" class=""
+                                id="firstname" placeholder="Question Name" required></div>
+                    </div>
+                </tr>
+                <br>
+                <tr>
+                    <div class="row">
+                        <div class="col"><label for="">Option 1</label></div>
+                        <div class="col"><input name="option1" type="text" [(ngModel)]="option1" class="" id="option1"
+                                placeholder="Option1" required></div>
+                    </div>
+                </tr>
+                <br>
+                <tr>
+                    <div class="row">
+                        <div class="col"><label for="">Option 2</label></div>
+                        <div class="col"><input name="option2" type="text" [(ngModel)]="option2" class="" id="option2"
+                                placeholder="Option2" required></div>
+                    </div>
+                </tr>
+                <br>
+                <tr>
+                    <div class="row">
+                        <div class="col"><label for="">Option 3</label></div>
+                        <div class="col"><input name="option3" type="text" [(ngModel)]="option3" class="" id="option3"
+                                placeholder="Option3" required></div>
+                    </div>
+                </tr>
+                <br>
+                <tr>
+                    <div class="row">
+                        <div class="col"><label for="">Option 4</label></div>
+                        <div class="col"><input name="option4" type="text" [(ngModel)]="option4" class="" id="option4"
+                                placeholder="Option4" required></div>
+                    </div>
+                </tr>
+
+                <br>
+                <tr>
+                    <div class="row">
+                        <div class="col"><label for="">Answer</label></div>
+                        <div class="col">
+                            <select (change)="answerhandler($event)">
+                                <option>Select Answer</option>
+                                <option>a</option>
+                                <option>b</option>
+                                <option>c</option>
+                                <option>d</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </tr>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button (click)=" onSubmit()" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br><br>
+
+<button (click)=submitQuestions() class="btn btn-primary">Submit</button>
