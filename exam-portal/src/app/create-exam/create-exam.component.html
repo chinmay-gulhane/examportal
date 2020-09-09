@@ -1,16 +1,31 @@
-<form>
+<div style="text-align: center;">
+  <h2>Create New Exam</h2>
+</div>
 
-    <div>
-      <label for="email">Exam Name</label>
-      <input type="email" name="email" class="form-control" id="email"  [(ngModel)] = "examName" placeholder="Name" required>
-    </div>
-    <br>
-    <div>
-      <label for="username">Exam Description</label>
-      <input type="text" name="username" class="form-control" id="username"  [(ngModel)] = "examDescription" placeholder="Description" required>
-    </div>
+<div class="row">
+  <div class="col-lg-3">
 
-    <br><br>
-    <button [disabled] = "!examcreated" (click) = "onSubmit()" class="btn btn-light" type="Submit">Create Exam</button>
-    <button [disabled] = "examcreated" (click) = "onSubmit2()" class="btn btn-light" type="Submit">Add Questions</button>
-  </form>
+  </div>
+  <div class="col">
+    <form>
+
+      <div>
+        <label for="email">Exam Name</label>
+        <input type="email" name="email" class="form-control" id="email"  [(ngModel)] = "examName" placeholder="Name" required>
+      </div>
+      <br>
+      <div>
+        <label for="username">Exam Description</label>
+        <input type="text" name="username" class="form-control" id="username"  [(ngModel)] = "examDescription" placeholder="Description" required>
+      </div>
+
+      <br><br>
+      <button [disabled] = "!examcreated" (click) = "onSubmit()" class="btn btn-light" type="Submit">Create Exam</button>
+      <button [disabled] = "examcreated" (click) = "onSubmit2()" class="btn btn-light" type="Submit">Add Questions</button>
+    </form>
+
+  </div>
+  <div class="col-lg-3">
+
+  </div>
+</div>
